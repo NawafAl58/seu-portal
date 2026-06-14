@@ -1,13 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Current Date
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const dateEl = document.getElementById('currentDate');
-    if (dateEl) dateEl.textContent = new Date().toLocaleDateString(undefined, options);
-
-    // Search Functionality
+    // UI Helpers
+    const sidebar = document.getElementById('sidebar');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileClose = document.getElementById('mobileClose');
+    const navOverlay = document.getElementById('navOverlay');
     const searchInput = document.getElementById('courseSearch');
     const cards = document.querySelectorAll('.course-card');
+    const navItems = document.querySelectorAll('.nav-links li');
+    const dateEl = document.getElementById('currentDate');
 
+    if (dateEl) dateEl.textContent = new Date().toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+    // Mobile Navigation
+    const toggleSidebar = () => {
+        sidebar.classList.toggle('open');
+        navOverlay.classList.toggle('active');
+    };
+
+    mobileToggle.onclick = toggleSidebar;
+    mobileClose.onclick = toggleSidebar;
+    navOverlay.onclick = toggleSidebar;
+
+    // Search and Filter
     searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
         cards.forEach(card => {
@@ -16,16 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Filter Navigation
-    const navItems = document.querySelectorAll('.nav-links li');
     navItems.forEach(item => {
-        item.addEventListener('click', () => {
+        item.onclick = () => {
             const filter = item.getAttribute('data-filter');
-            if (!filter) return;
-
             navItems.forEach(n => n.classList.remove('active'));
             item.classList.add('active');
-
             cards.forEach(card => {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {
                     card.style.display = 'flex';
@@ -33,88 +42,86 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.style.display = 'none';
                 }
             });
-        });
+            if (window.innerWidth <= 992) toggleSidebar();
+        };
     });
 
-    // Mock Quiz Logic
-    const quizData = {
+    // Quiz Engine
+    const quizzes = {
         'IT245': [
-            { q: "Which data structure uses LIFO?", a: ["Queue", "Stack", "Linked List"], correct: 1 },
-            { q: "What is the time complexity of binary search?", a: ["O(n)", "O(log n)", "O(n^2)"], correct: 1 }
+            { q: "What is the time complexity of pushing to a stack?", a: ["O(1)", "O(n)", "O(log n)"], c: 0 },
+            { q: "Which data structure uses FIFO?", a: ["Stack", "Queue", "Binary Tree"], c: 1 }
         ],
         'IT241': [
-            { q: "What is the main role of a Kernel?", a: ["Memory Management", "GUI Design", "Web Browsing"], correct: 0 },
-            { q: "Which of these is a process state?", a: ["Waiting", "Flying", "Sleeping"], correct: 0 }
+            { q: "What is 'SJF' in CPU scheduling?", a: ["Shortest Job First", "Small Job First", "Single Job Flow"], c: 0 },
+            { q: "Deadlock occurs when processes are waiting for...", a: ["Input", "Resources", "Output"], c: 1 }
+        ],
+        'IT244': [
+            { q: "Which SQL command is used to fetch data?", a: ["FETCH", "GET", "SELECT"], c: 2 },
+            { q: "What does ERD stand for?", a: ["Entity Relation Diagram", "Easy Row Data", "Enhanced Real Data"], c: 0 }
+        ],
+        'IT230': [
+            { q: "Which tag is used for the largest heading in HTML?", a: ["<head>", "<h6>", "<h1>"], c: 2 },
+            { q: "What does CSS stand for?", a: ["Cascading Style Sheets", "Colorful Style Sheets", "Computer Style Sheets"], c: 0 }
+        ],
+        'IT340': [
+            { q: "How many layers are in the OSI model?", a: ["5", "7", "4"], c: 1 },
+            { q: "Which layer is responsible for IP addressing?", a: ["Transport", "Data Link", "Network"], c: 2 }
+        ],
+        'IT440': [
+            { q: "What is the 'C' in the CIA triad?", a: ["Control", "Confidentiality", "Cipher"], c: 1 },
+            { q: "AES is what type of algorithm?", a: ["Asymmetric", "Symmetric", "Hashing"], c: 1 }
+        ],
+        'IT412': [
+            { q: "What does SaaS stand for?", a: ["Software as a Service", "System as a Solution", "Storage as a Site"], c: 0 }
         ],
         'MATH251': [
-            { q: "What is a matrix with only one column called?", a: ["Row Vector", "Column Vector", "Identity"], correct: 1 }
+            { q: "What is the determinant of an Identity matrix?", a: ["0", "1", "Infinity"], c: 1 }
         ]
     };
 
-    let currentSubject = '';
-    let currentQuestionIdx = 0;
-    let score = 0;
-
+    let activeSub = '', qIdx = 0, score = 0;
     const modal = document.getElementById('quizModal');
-    const quizBtns = document.querySelectorAll('.quiz-btn');
+    const qCont = document.getElementById('quizContainer');
+    const rCont = document.getElementById('quizResult');
 
-    quizBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentSubject = btn.getAttribute('data-subject');
-            if (quizData[currentSubject]) {
-                startQuiz(currentSubject);
-            }
-        });
+    document.querySelectorAll('.quiz-btn').forEach(btn => {
+        btn.onclick = () => {
+            activeSub = btn.dataset.subject;
+            qIdx = 0; score = 0;
+            document.getElementById('quizTitle').innerText = `${activeSub} Quiz`;
+            qCont.classList.remove('hidden');
+            rCont.classList.add('hidden');
+            modal.style.display = 'block';
+            renderQ();
+        };
     });
 
-    function startQuiz(subject) {
-        currentQuestionIdx = 0;
-        score = 0;
-        document.getElementById('quizTitle').textContent = `${subject} Check`;
-        document.getElementById('quizContainer').classList.remove('hidden');
-        document.getElementById('quizResult').classList.add('hidden');
-        modal.style.display = 'block';
-        showQuestion();
-    }
-
-    function showQuestion() {
-        const q = quizData[currentSubject][currentQuestionIdx];
-        document.getElementById('questionText').textContent = q.q;
-        const optionsCont = document.getElementById('optionsContainer');
-        optionsCont.innerHTML = '';
-        
-        q.a.forEach((opt, idx) => {
+    function renderQ() {
+        const q = quizzes[activeSub][qIdx];
+        document.getElementById('questionText').innerText = q.q;
+        const optCont = document.getElementById('optionsContainer');
+        optCont.innerHTML = '';
+        q.a.forEach((opt, i) => {
             const b = document.createElement('button');
-            b.classList.add('option-btn');
-            b.textContent = opt;
-            b.onclick = () => checkAnswer(idx);
-            optionsCont.appendChild(b);
+            b.className = 'option-btn';
+            b.innerText = opt;
+            b.onclick = () => {
+                if (i === q.c) score++;
+                qIdx++;
+                if (qIdx < quizzes[activeSub].length) renderQ();
+                else showResult();
+            };
+            optCont.appendChild(b);
         });
-    }
-
-    function checkAnswer(idx) {
-        if (idx === quizData[currentSubject][currentQuestionIdx].correct) score++;
-        currentQuestionIdx++;
-        if (currentQuestionIdx < quizData[currentSubject].length) {
-            showQuestion();
-        } else {
-            showResult();
-        }
     }
 
     function showResult() {
-        document.getElementById('quizContainer').classList.add('hidden');
-        document.getElementById('quizResult').classList.remove('hidden');
-        document.getElementById('scoreText').textContent = `You scored ${score} out of ${quizData[currentSubject].length}!`;
+        qCont.classList.add('hidden');
+        rCont.classList.remove('hidden');
+        document.getElementById('scoreText').innerText = `You scored ${score} / ${quizzes[activeSub].length}`;
     }
 
-    // Modal Global Handlers
-    window.closeModal = function() {
-        modal.style.display = 'none';
-    };
-
-    window.onclick = (event) => {
-        if (event.target == modal) closeModal();
-    };
+    document.getElementById('modalClose').onclick = () => modal.style.display = 'none';
+    document.getElementById('finishQuiz').onclick = () => modal.style.display = 'none';
 });
