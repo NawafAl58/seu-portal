@@ -315,3 +315,28 @@ header {
     .search-bar { max-width: none; }
     .modal-content { padding: 1.5rem; margin-top: 10vh; }
 }
+
+/* Footer Styling */
+.main-footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+}
+
+.main-footer p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.main-footer i {
+    color: var(--beast-red);
+    margin: 0 4px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
