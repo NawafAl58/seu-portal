@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Current Date
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById('currentDate').textContent = new Date().toLocaleDateString(undefined, options);
+    const dateEl = document.getElementById('currentDate');
+    if (dateEl) dateEl.textContent = new Date().toLocaleDateString(undefined, options);
 
     // Search Functionality
     const searchInput = document.getElementById('courseSearch');
@@ -10,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
         cards.forEach(card => {
-            const name = card.getAttribute('data-name');
-            card.style.display = name.includes(term) ? 'block' : 'none';
+            const name = card.getAttribute('data-name').toLowerCase();
+            card.style.display = name.includes(term) ? 'flex' : 'none';
         });
     });
 
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cards.forEach(card => {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'block';
+                    card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
                 }
@@ -37,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mock Quiz Logic
     const quizData = {
+        'IT245': [
+            { q: "Which data structure uses LIFO?", a: ["Queue", "Stack", "Linked List"], correct: 1 },
+            { q: "What is the time complexity of binary search?", a: ["O(n)", "O(log n)", "O(n^2)"], correct: 1 }
+        ],
         'IT241': [
             { q: "What is the main role of a Kernel?", a: ["Memory Management", "GUI Design", "Web Browsing"], correct: 0 },
             { q: "Which of these is a process state?", a: ["Waiting", "Flying", "Sleeping"], correct: 0 }
@@ -52,13 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modal = document.getElementById('quizModal');
     const quizBtns = document.querySelectorAll('.quiz-btn');
-    const closeBtn = document.querySelector('.close');
 
     quizBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             currentSubject = btn.getAttribute('data-subject');
-            startQuiz(currentSubject);
+            if (quizData[currentSubject]) {
+                startQuiz(currentSubject);
+            }
         });
     });
 
@@ -103,10 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('scoreText').textContent = `You scored ${score} out of ${quizData[currentSubject].length}!`;
     }
 
-    closeBtn.onclick = () => modal.style.display = 'none';
-    window.onclick = (event) => { if (event.target == modal) modal.style.display = 'none'; }
-});
+    // Modal Global Handlers
+    window.closeModal = function() {
+        modal.style.display = 'none';
+    };
 
-function closeModal() {
-    document.getElementById('quizModal').style.display = 'none';
-}
+    window.onclick = (event) => {
+        if (event.target == modal) closeModal();
+    };
+});

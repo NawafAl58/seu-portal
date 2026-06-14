@@ -17,7 +17,7 @@
             <li class="active" data-filter="all"><i class="fas fa-th-large"></i> Dashboard</li>
             <li data-filter="it"><i class="fas fa-code"></i> IT Courses</li>
             <li data-filter="math"><i class="fas fa-square-root-alt"></i> Math & Stats</li>
-            <li id="quiz-nav"><i class="fas fa-vial"></i> Test Knowledge</li>
+            <li id="quiz-nav-li" onclick="document.getElementById('quizModal').style.display='block'"><i class="fas fa-vial"></i> Test Knowledge</li>
         </ul>
         <div class="user-profile">
             <div class="avatar">N</div>
@@ -54,7 +54,7 @@
                 </div>
                 <p>Mastering complexity, trees, and algorithms. The core of IT.</p>
                 <div class="links">
-                    <a href="https://seu1.org" target="_blank"><i class="fas fa-file-pdf"></i> Past Exams</a>
+                    <a href="https://seu1.org/files/level5/IT-245/" target="_blank"><i class="fas fa-file-pdf"></i> IT245 Archive</a>
                     <a href="#" class="quiz-btn" data-subject="IT245"><i class="fas fa-play"></i> Practice</a>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="course-card" data-category="math" data-name="math251 linear algebra omnia">
                 <div class="card-header">
                     <span class="badge math">Math</span>
-                    <i class="fas fa-matrix"></i>
+                    <i class="fas fa-square-root-alt"></i>
                 </div>
                 <h3>MATH251: Linear Algebra</h3>
                 <div class="stats">
@@ -72,8 +72,9 @@
                 </div>
                 <p>Vectors, matrices, and linear transformations.</p>
                 <div class="links">
-                    <a href="https://www.youtube.com/@OmniaA" target="_blank"><i class="fab fa-youtube"></i> Omnia A Playlist</a>
-                    <a href="https://seu1.org" target="_blank"><i class="fas fa-file-pdf"></i> Exam Archive</a>
+                    <a href="https://www.youtube.com/@OmniaA/playlists" target="_blank"><i class="fab fa-youtube"></i> Omnia A Playlists</a>
+                    <a href="https://seu1.org/files/level5/MATH-251/" target="_blank"><i class="fas fa-file-pdf"></i> MATH251 Archive</a>
+                    <a href="#" class="quiz-btn" data-subject="MATH251"><i class="fas fa-play"></i> Test Logic</a>
                 </div>
             </div>
 
@@ -90,8 +91,8 @@
                 </div>
                 <p>Data analysis, probability, and distribution.</p>
                 <div class="links">
-                    <a href="#" class="ghannam-link"><i class="fas fa-book"></i> Ghannam Summaries</a>
-                    <a href="https://seu1.org" target="_blank"><i class="fas fa-file-pdf"></i> Past Papers</a>
+                    <a href="http://seu1.org/files/level5/STAT-101/%D9%85%D9%84%D8%AE%D8%B5%D8%A7%D8%AA/STAT-101-Chapter%201,2,3%20By%20Ghannam.pdf" target="_blank"><i class="fas fa-book"></i> Ghannam (Ch 1-3)</a>
+                    <a href="https://seu1.org/files/level5/STAT-101/" target="_blank"><i class="fas fa-file-pdf"></i> STAT101 Archive</a>
                 </div>
             </div>
 
@@ -108,7 +109,7 @@
                 </div>
                 <p>Kernel, processes, memory management, and file systems.</p>
                 <div class="links">
-                    <a href="https://seu1.org" target="_blank"><i class="fas fa-file-invoice"></i> Resources</a>
+                    <a href="https://seu1.org/files/level5/IT-241/" target="_blank"><i class="fas fa-file-invoice"></i> IT241 Archive</a>
                     <a href="#" class="quiz-btn" data-subject="IT241"><i class="fas fa-vial"></i> Mock Test</a>
                 </div>
             </div>
@@ -126,7 +127,7 @@
                 </div>
                 <p>SQL, Normalization, and ERD modeling.</p>
                 <div class="links">
-                    <a href="https://seu1.org" target="_blank"><i class="fas fa-link"></i> seu1.org Links</a>
+                    <a href="https://seu1.org/files/level4/IT-244/" target="_blank"><i class="fas fa-link"></i> IT244 Archive</a>
                 </div>
             </div>
         </section>
@@ -134,17 +135,16 @@
         <!-- Mock Assessment Modal -->
         <div id="quizModal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" onclick="closeModal()">&times;</span>
                 <h2 id="quizTitle">Knowledge Check</h2>
                 <div id="quizContainer">
                     <p id="questionText">Ready to start?</p>
                     <div class="options" id="optionsContainer"></div>
-                    <button id="nextBtn" class="hidden">Next Question</button>
                 </div>
                 <div id="quizResult" class="hidden">
                     <h3>Result</h3>
                     <p id="scoreText"></p>
-                    <button onclick="closeModal()">Close</button>
+                    <button class="action-btn" onclick="closeModal()">Close</button>
                 </div>
             </div>
         </div>
