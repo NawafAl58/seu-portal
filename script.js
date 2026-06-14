@@ -198,18 +198,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.className = 'course-card';
                 card.innerHTML = `
                     <div class="card-header">
-                        <span class="badge ${c.diff}">${c.diff}</span>
-                        <div class="course-icon"><i class="${c.icon}"></i></div>
+                        <span class="badge \${c.diff}">\${c.diff}</span>
+                        <div class="course-icon"><i class="\${c.icon}"></i></div>
                     </div>
-                    <h3>${c.title}</h3>
+                    <h3>\${c.title}</h3>
                     <div class="course-meta">
-                        <span><i class="far fa-clock"></i> ${c.hrs}</span>
+                        <span><i class="far fa-clock"></i> \${c.hrs}</span>
                         <span><i class="fas fa-book-open"></i> Core IT</span>
                     </div>
-                    <p>${c.desc}</p>
+                    <p>\${c.desc}</p>
                     <div class="resource-links">
-                        <a href="${c.link}" target="_blank"><i class="fas fa-external-link-alt"></i> Archive</a>
-                        <button class="quiz-btn" data-id="${c.id}"><i class="fas fa-vial"></i> Take Assessment (10 Qs)</button>
+                        <a href="\${c.link}" target="_blank"><i class="fas fa-external-link-alt"></i> Archive</a>
+                        <button class="quiz-btn" data-id="\${c.id}"><i class="fas fa-vial"></i> Take Assessment (10 Qs)</button>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function startQuiz(id) {
         currentQuiz = quizzes[id];
         qIdx = 0; score = 0;
-        document.getElementById('quizTitle').innerText = `${id} Assessment (10 Questions)`;
+        document.getElementById('quizTitle').innerText = \`\${id} Assessment (10 Questions)\`;
         document.getElementById('quizContent').classList.remove('hidden');
         document.getElementById('quizResult').classList.add('hidden');
         modal.style.display = 'flex';
@@ -237,8 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showQ() {
         const q = currentQuiz[qIdx];
-        document.getElementById('quizProgress').style.width = `${((qIdx + 1) / currentQuiz.length) * 100}%`;
-        document.getElementById('questionText').innerText = `Question ${qIdx + 1}: ${q.q}`;
+        document.getElementById('quizProgress').style.width = \`\${((qIdx + 1) / currentQuiz.length) * 100}%\`;
+        document.getElementById('questionText').innerText = \`Question \${qIdx + 1}: \${q.q}\`;
         const optCont = document.getElementById('optionsContainer');
         const expBox = document.getElementById('explanationBox');
         const nextBtn = document.getElementById('nextBtn');
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
         q.a.forEach((opt, i) => {
             const div = document.createElement('div');
             div.className = 'option-card';
-            div.innerHTML = `<span>${opt}</span><i class="far fa-circle"></i>`;
+            div.innerHTML = \`<span>\${opt}</span><i class="far fa-circle"></i>\`;
             div.onclick = () => {
                 if (nextBtn.classList.contains('hidden')) {
                     const allOpts = optCont.querySelectorAll('.option-card');
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else {
             document.getElementById('quizContent').classList.add('hidden');
             document.getElementById('quizResult').classList.remove('hidden');
-            document.getElementById('scoreText').innerText = `Final Score: ${score} / ${currentQuiz.length}`;
+            document.getElementById('scoreText').innerText = \`Final Score: \${score} / \${currentQuiz.length}\`;
         }
     };
 
