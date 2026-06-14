@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <li><strong>Number Theory:</strong> Modular arithmetic (The basis of encryption) and Prime factorization.</li>
                         <li><strong>Graph Theory:</strong> Understanding Nodes, Edges, Adjacency Matrices, and Trees.</li>
                     </ul>
-                    <div class="formula"><strong>Combinations Formula:</strong> C(n, k) = n! / (k!(n-k)!)</div>`
+                    <div class="formula"><strong>De Morgan's Law:</strong> ¬(P ∧ Q) ≡ ¬P ∨ ¬Q</div>`
         },
         {
             id: 'MATH251',
@@ -150,74 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="formula"><strong>Ohm's Law:</strong> V = I × R</div>`
         },
         {
-            id: 'ISLM101',
-            category: 'university-req',
-            diff: 'easy',
-            icon: 'fas fa-mosque',
-            title: 'ISLM101: Islamic Culture I',
-            hrs: '2',
-            desc: 'Introduction to Islamic faith and its characteristics.',
-            summary: `<h3>ISLM101 Course Summary</h3>
-                    <p>A study of the foundational values and beliefs of Islamic civilization.</p>
-                    <h4>Key Areas</h4>
-                    <ul>
-                        <li>Definitions of culture vs. civilization.</li>
-                        <li>The comprehensive nature of Islamic Creed (Aqidah).</li>
-                        <li>The impact of Islamic values on scientific ethics and social behavior.</li>
-                    </ul>`
-        },
-        {
-            id: 'ISLM102',
-            category: 'university-req',
-            diff: 'easy',
-            icon: 'fas fa-book',
-            title: 'ISLM102: Islamic Culture II',
-            hrs: '2',
-            desc: 'Islam and society.',
-            summary: `<h3>ISLM102 Course Summary</h3>
-                    <p>Examines the Islamic perspective on social structures and community.</p>
-                    <h4>Focus Areas</h4>
-                    <ul>
-                        <li>Family rights and responsibilities in Islam.</li>
-                        <li>Social justice and community solidarity.</li>
-                        <li>The Islamic approach to universal human rights.</li>
-                    </ul>`
-        },
-        {
-            id: 'ISLM103',
-            category: 'university-req',
-            diff: 'easy',
-            icon: 'fas fa-balance-scale',
-            title: 'ISLM103: Islamic Culture III',
-            hrs: '2',
-            desc: 'Islamic economic and political systems.',
-            summary: `<h3>ISLM103 Course Summary</h3>
-                    <p>Focuses on the practical systems of governance and economy in Islam.</p>
-                    <h4>Core Topics</h4>
-                    <ul>
-                        <li>Principles of the Islamic Economic System (Zakat, prohibition of Riba).</li>
-                        <li>The concept of Shura (consultation) in political leadership.</li>
-                        <li>The role of ethical finance in modern society.</li>
-                    </ul>`
-        },
-        {
-            id: 'ISLM104',
-            category: 'university-req',
-            diff: 'easy',
-            icon: 'fas fa-heart',
-            title: 'ISLM104: Islamic Culture IV',
-            hrs: '2',
-            desc: 'Contemporary issues and human rights.',
-            summary: `<h3>ISLM104 Course Summary</h3>
-                    <p>Discusses modern global challenges from an Islamic perspective.</p>
-                    <h4>Discussion Topics</h4>
-                    <ul>
-                        <li>Islam and globalization.</li>
-                        <li>Dialogue between civilizations.</li>
-                        <li>Responding to extremist ideologies and promoting moderation.</li>
-                    </ul>`
-        },
-        {
             id: 'IT101',
             category: 'it-core',
             diff: 'med',
@@ -230,9 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h4>The IT Stack</h4>
                     <ul>
                         <li><strong>Information Systems (IS):</strong> Understanding how people, data, and technology work together to solve business problems.</li>
-                        <li><strong>Types of Systems:</strong> Transaction Processing (TPS), Decision Support (DSS), and Enterprise Resource Planning (ERP).</li>
+                        <li><strong>Types of Systems:</strong> TPS, DSS, and ERP.</li>
                         <li><strong>Infrastructure:</strong> Hardware, Operating Systems, Networking, and Cloud.</li>
-                        <li><strong>Digital Ethics:</strong> Privacy, intellectual property, and the social impact of automation.</li>
+                        <li><strong>Digital Ethics:</strong> Privacy and intellectual property.</li>
                     </ul>`
         },
         {
@@ -247,12 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>Covers both Client-side and Server-side development for the web.</p>
                     <h4>Full Stack Foundations</h4>
                     <ul>
-                        <li><strong>HTML5:</strong> Semantic markup for better accessibility and SEO.</li>
-                        <li><strong>CSS3:</strong> Styling with Flexbox, CSS Grid, and responsive design techniques.</li>
-                        <li><strong>JavaScript:</strong> Programming logic on the client-side, event handling, and DOM manipulation.</li>
-                        <li><strong>PHP & MySQL:</strong> Handling form data on the server and storing/retrieving information from a database.</li>
-                    </ul>
-                    <div class="note"><strong>Exam Tip:</strong> Be ready to explain the difference between GET and POST methods in web forms!</div>`
+                        <li><strong>HTML5:</strong> Semantic markup for better accessibility.</li>
+                        <li><strong>CSS3:</strong> Styling with Flexbox and CSS Grid.</li>
+                        <li><strong>JavaScript:</strong> Programming logic on the client-side.</li>
+                        <li><strong>PHP & MySQL:</strong> Handling server-side data and databases.</li>
+                    </ul>`
         },
         {
             id: 'IT241',
@@ -263,13 +194,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Internal workings of OS: Processes, Memory, and Storage.',
             summary: `<h3>IT241 Course Summary</h3>
-                    <p>The OS is the ultimate resource manager. This course explains how it manages everything under the hood.</p>
+                    <p>The OS is the ultimate resource manager. This course explains its internal mechanisms.</p>
                     <h4>Advanced OS Concepts</h4>
                     <ul>
-                        <li><strong>Process Scheduling:</strong> Algorithms like First-Come-First-Serve (FCFS), Round Robin (RR), and Shortest Job First (SJF).</li>
-                        <li><strong>Concurrency & Deadlocks:</strong> Understanding race conditions and how the OS uses Semaphores to prevent them.</li>
-                        <li><strong>Memory Management:</strong> Paging, Segmentation, and the magic of Virtual Memory (RAM swapping to disk).</li>
-                        <li><strong>Storage:</strong> How file systems (NTFS, EXT4) organize data on physical disks.</li>
+                        <li><strong>Scheduling:</strong> Algorithms like FCFS, Round Robin, and SJF.</li>
+                        <li><strong>Memory:</strong> Paging, Segmentation, and Virtual Memory.</li>
+                        <li><strong>Concurreny:</strong> Deadlocks, Mutex, and Semaphores.</li>
                     </ul>`
         },
         {
@@ -281,13 +211,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Relational database design, ERD, and advanced SQL.',
             summary: `<h3>IT244 Course Summary</h3>
-                    <p>Every modern app is powered by a database. This course teaches you how to build them correctly.</p>
-                    <h4>The Relational Model</h4>
+                    <p>Learn to design and manage relational databases efficiently.</p>
+                    <h4>Relational Foundations</h4>
                     <ul>
-                        <li><strong>Entity-Relationship Diagrams (ERD):</strong> Modeling the real world into tables and relationships.</li>
-                        <li><strong>Normalization:</strong> The 3 steps (1NF, 2NF, 3NF) to ensure your data isn't redundant or prone to errors.</li>
-                        <li><strong>SQL Mastery:</strong> Complex SELECT queries, JOINs, Subqueries, and Data Definition Language (DDL).</li>
-                        <li><strong>ACID Properties:</strong> Ensuring database transactions are reliable (Atomicity, Consistency, Isolation, Durability).</li>
+                        <li><strong>ERD:</strong> Entity-Relationship modeling.</li>
+                        <li><strong>Normalization:</strong> Reducing redundancy (1NF, 2NF, 3NF).</li>
+                        <li><strong>SQL:</strong> Advanced querying and data definition.</li>
                     </ul>`
         },
         {
@@ -299,15 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Stacks, Queues, Trees, Graphs, and Algorithm complexity.',
             summary: `<h3>IT245 Course Summary</h3>
-                    <p>Data Structures are how we organize data to make programs run fast. Crucial for coding interviews!</p>
-                    <h4>The IT Engine Room</h4>
+                    <p>Organizing data to make programs run efficiently. Crucial for advanced IT.</p>
+                    <h4>Data Architectures</h4>
                     <ul>
-                        <li><strong>Arrays & Linked Lists:</strong> The basic building blocks of linear data storage.</li>
-                        <li><strong>Stacks & Queues:</strong> Understanding LIFO (Last-In-First-Out) and FIFO (First-In-First-Out) logic.</li>
-                        <li><strong>Trees & Graphs:</strong> Hierarchical data structures and networking models. BST, AVL, and Heaps.</li>
-                        <li><strong>Sorting & Searching:</strong> Algorithms like Merge Sort, Quick Sort, and Binary Search.</li>
-                    </ul>
-                    <div class="formula"><strong>Big O Notation:</strong> O(1) < O(log n) < O(n) < O(n log n) < O(n²)</div>`
+                        <li><strong>Linear:</strong> Stacks, Queues, and Linked Lists.</li>
+                        <li><strong>Non-Linear:</strong> Trees (BST, AVL) and Graphs.</li>
+                        <li><strong>Algorithms:</strong> Sorting and Search efficiency (Big O).</li>
+                    </ul>`
         },
         {
             id: 'IT340',
@@ -318,13 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Protocols, OSI model, Subnetting, and Routing.',
             summary: `<h3>IT340 Course Summary</h3>
-                    <p>Teaches how computers talk to each other across the room or across the world.</p>
-                    <h4>Networking Blueprint</h4>
+                    <p>Detailed study of networking protocols and infrastructure management.</p>
+                    <h4>Network Architecture</h4>
                     <ul>
-                        <li><strong>OSI 7-Layer Model:</strong> Understanding the flow from the Physical layer to the Application layer.</li>
-                        <li><strong>Subnetting (VLSM):</strong> The mathematical art of carving IP address ranges for efficiency.</li>
-                        <li><strong>Routing Protocols:</strong> How routers decide the best path (OSPF, BGP, RIP).</li>
-                        <li><strong>TCP/IP Suite:</strong> The universal language of the internet (IP, TCP, UDP, ICMP).</li>
+                        <li><strong>OSI Model:</strong> Layers 1 through 7.</li>
+                        <li><strong>IP:</strong> IPv4 Subnetting and IPv6.</li>
+                        <li><strong>Routing:</strong> Dynamic protocols like OSPF and BGP.</li>
                     </ul>`
         },
         {
@@ -336,13 +262,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Cybersecurity, Cryptography, and Risk Management.',
             summary: `<h3>IT344 Course Summary</h3>
-                    <p>Learn to defend systems against hackers, malware, and data breaches.</p>
-                    <h4>The Cybersecurity Shield</h4>
+                    <p>Protecting systems and data from unauthorized access and cyber threats.</p>
+                    <h4>Security Pillars</h4>
                     <ul>
-                        <li><strong>The CIA Triad:</strong> Confidentiality, Integrity, and Availability. The 3 goals of security.</li>
-                        <li><strong>Cryptography:</strong> Symmetric (fast) vs Asymmetric (secure/Public key) encryption.</li>
-                        <li><strong>Network Defense:</strong> Using Firewalls, IDS (Intrusion Detection), and Honeypots.</li>
-                        <li><strong>Security Policy:</strong> Risk assessment, business continuity, and disaster recovery planning.</li>
+                        <li><strong>CIA Triad:</strong> Confidentiality, Integrity, and Availability.</li>
+                        <li><strong>Cryptography:</strong> Symmetric and Asymmetric encryption.</li>
+                        <li><strong>Network Defense:</strong> Firewalls and IDS.</li>
                     </ul>`
         },
         {
@@ -354,13 +279,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Software development lifecycle, Agile, and Gantt charts.',
             summary: `<h3>IT343 Course Summary</h3>
-                    <p>Managing the "Triple Constraint" of Project Management: Scope, Time, and Cost.</p>
-                    <h4>Management Methodologies</h4>
+                    <p>The processes involved in planning and executing IT projects.</p>
+                    <h4>PM Frameworks</h4>
                     <ul>
-                        <li><strong>Waterfall vs Agile:</strong> Comparing traditional sequential development with modern, iterative Scrum.</li>
-                        <li><strong>Project Planning:</strong> Creating WBS (Work Breakdown Structure) and Gantt Charts.</li>
-                        <li><strong>Quality & Risk:</strong> Ensuring the final software meets user expectations while avoiding failures.</li>
-                        <li><strong>Team Leadership:</strong> Managing human resources and communication in technical teams.</li>
+                        <li><strong>SDLC:</strong> Waterfall and Agile methodologies.</li>
+                        <li><strong>Planning:</strong> WBS and Gantt Charts.</li>
+                        <li><strong>Risk:</strong> Mitigating technical and project risks.</li>
                     </ul>`
         },
         {
@@ -372,13 +296,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Connecting disparate systems and middleware.',
             summary: `<h3>IT440 Course Summary</h3>
-                    <p>Integration is about making different systems talk to each other to form a cohesive whole.</p>
-                    <h4>Integration Strategies</h4>
+                    <p>How to make different software and hardware work as a unified system.</p>
+                    <h4>Integration Methods</h4>
                     <ul>
-                        <li><strong>Vertical vs Horizontal:</strong> Methods of connecting silos of information.</li>
-                        <li><strong>Middleware:</strong> Software that acts as a bridge (ESB, message queues).</li>
-                        <li><strong>Service Oriented Architecture (SOA):</strong> Building systems as a collection of reusable services.</li>
-                        <li><strong>API Economy:</strong> Leveraging REST and SOAP to connect modern web applications.</li>
+                        <li><strong>Middleware:</strong> ESBs and message queues.</li>
+                        <li><strong>SOA:</strong> Service-Oriented Architecture.</li>
+                        <li><strong>APIs:</strong> Connecting via REST and SOAP.</li>
                     </ul>`
         },
         {
@@ -390,13 +313,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Legal, social, and professional issues in IT.',
             summary: `<h3>IT446 Course Summary</h3>
-                    <p>Discusses the responsibilities of IT professionals and the laws of the digital world.</p>
-                    <h4>Ethical Frameworks</h4>
+                    <p>Exploring the ethical and legal boundaries of the IT profession.</p>
+                    <h4>Ethical Issues</h4>
                     <ul>
-                        <li><strong>Intellectual Property:</strong> Navigating Copyrights, Patents, and Open Source licenses.</li>
-                        <li><strong>Cyber Law:</strong> Understanding the legal consequences of hacking and data misuse.</li>
-                        <li><strong>Privacy in the Digital Age:</strong> Balancing security with individual privacy rights.</li>
-                        <li><strong>Global Impact:</strong> How AI and automation affect society and the workforce.</li>
+                        <li><strong>Intellectual Property:</strong> Patents and Copyrights.</li>
+                        <li><strong>Privacy:</strong> Data protection in the digital age.</li>
+                        <li><strong>Legality:</strong> Cybercrime laws in Saudi Arabia.</li>
                     </ul>`
         },
         {
@@ -408,13 +330,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Virtualization, AWS/Azure, and cloud architecture.',
             summary: `<h3>IT448 Course Summary</h3>
-                    <p>Teaches the modern shift from buying servers to "renting" computing power on the cloud.</p>
-                    <h4>Cloud Architecture</h4>
+                    <p>Transitioning from local hardware to on-demand cloud services.</p>
+                    <h4>Cloud Concepts</h4>
                     <ul>
-                        <li><strong>Service Models:</strong> IaaS (Infrastructure), PaaS (Platform), and SaaS (Software).</li>
-                        <li><strong>Deployment Models:</strong> Public, Private, Hybrid, and Community clouds.</li>
-                        <li><strong>Virtualization:</strong> The technology (Hypervisors) that allows one server to act as many.</li>
-                        <li><strong>Containers & Orchestration:</strong> Introduction to Docker and Kubernetes.</li>
+                        <li><strong>Service Models:</strong> IaaS, PaaS, and SaaS.</li>
+                        <li><strong>Virtualization:</strong> The engine behind cloud instances.</li>
+                        <li><strong>Platforms:</strong> Overview of AWS and Microsoft Azure.</li>
                     </ul>`
         },
         {
@@ -426,13 +347,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Server management, Linux admin, and maintenance.',
             summary: `<h3>IT411 Course Summary</h3>
-                    <p>Practical, hands-on management of servers and network infrastructure.</p>
-                    <h4>Administrator Playbook</h4>
+                    <p>The daily tasks of managing enterprise server environments.</p>
+                    <h4>Admin Skills</h4>
                     <ul>
-                        <li><strong>Linux/Unix Administration:</strong> Command line mastery, user management, and cron jobs.</li>
-                        <li><strong>Active Directory (Windows):</strong> Centralized management of users and computers in an enterprise.</li>
-                        <li><strong>Network Services:</strong> Configuring DNS, DHCP, and Web Servers (Apache/Nginx).</li>
-                        <li><strong>Disaster Recovery:</strong> Planning for backups and system restoration after failure.</li>
+                        <li><strong>OS Admin:</strong> Linux command line and user management.</li>
+                        <li><strong>Active Directory:</strong> Managing Windows domains.</li>
+                        <li><strong>Backup:</strong> Planning for disaster recovery.</li>
                     </ul>`
         },
         {
@@ -444,13 +364,12 @@ document.addEventListener('DOMContentLoaded', () => {
             hrs: '3',
             desc: 'Developing Android/iOS apps with modern frameworks.',
             summary: `<h3>IT412 Course Summary</h3>
-                    <p>Design and build mobile applications that run on billions of devices.</p>
-                    <h4>Mobile Development Stack</h4>
+                    <p>Principles of designing and building mobile applications.</p>
+                    <h4>Mobile Stack</h4>
                     <ul>
-                        <li><strong>Native Development:</strong> Kotlin for Android and Swift for iOS.</li>
-                        <li><strong>Cross-Platform:</strong> Using Flutter or React Native to write code once for both platforms.</li>
-                        <li><strong>Mobile UX:</strong> Understanding touch constraints, screen sizes, and battery life optimization.</li>
-                        <li><strong>Back-end Integration:</strong> Connecting apps to cloud databases and authentication services (Firebase).</li>
+                        <li><strong>Platforms:</strong> Native vs. Cross-platform (Flutter/React Native).</li>
+                        <li><strong>UI/UX:</strong> Mobile-first design considerations.</li>
+                        <li><strong>APIs:</strong> Integrating mobile apps with back-end services.</li>
                     </ul>`
         },
         {
@@ -461,14 +380,13 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'IT481: Graduation Project I',
             hrs: '2',
             desc: 'Project proposal, analysis, and initial design phase.',
-            summary: `<h3>GP1: The Planning Phase</h3>
-                    <p>This is the first half of your senior project. You move from an idea to a full technical design.</p>
-                    <h4>Project Milestones</h4>
+            summary: `<h3>IT481 Course Summary</h3>
+                    <p>The research and planning phase for the final senior project.</p>
+                    <h4>GP1 Phases</h4>
                     <ul>
-                        <li><strong>Literature Review:</strong> Researching existing solutions to the problem you want to solve.</li>
-                        <li><strong>System Analysis:</strong> Gathering requirements and creating Use Case diagrams.</li>
-                        <li><strong>High-Level Design:</strong> Architecture, Database Schemas, and UI/UX Wireframes.</li>
-                        <li><strong>The Proposal:</strong> Presenting your plan to the faculty for approval.</li>
+                        <li><strong>Proposal:</strong> Defining the problem and scope.</li>
+                        <li><strong>Analysis:</strong> Requirement gathering and feasibility.</li>
+                        <li><strong>Design:</strong> Creating the technical blueprint.</li>
                     </ul>`
         },
         {
@@ -479,32 +397,192 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'IT482: Graduation Project II',
             hrs: '4',
             desc: 'Project implementation, testing, and final defense.',
-            summary: `<h3>GP2: Implementation & Defense</h3>
-                    <p>The final hurdle. You build the system you designed in GP1 and prove it works.</p>
-                    <h4>Execution Phase</h4>
+            summary: `<h3>IT482 Course Summary</h3>
+                    <p>The implementation and final assessment phase of the graduation project.</p>
+                    <h4>GP2 Execution</h4>
                     <ul>
-                        <li><strong>Full-Stack Coding:</strong> Developing the front-end, back-end, and database.</li>
-                        <li><strong>Quality Assurance:</strong> Rigorous testing (Unit testing, System testing) to find bugs.</li>
-                        <li><strong>Final Report:</strong> Writing the comprehensive technical documentation (The Thesis).</li>
-                        <li><strong>Final Defense:</strong> A live demo and presentation of your project to the grading committee.</li>
+                        <li><strong>Development:</strong> Coding and system assembly.</li>
+                        <li><strong>Testing:</strong> Verifying performance and security.</li>
+                        <li><strong>Defense:</strong> Final presentation to the committee.</li>
                     </ul>`
+        },
+        {
+            id: 'IT471',
+            category: 'electives',
+            diff: 'med',
+            icon: 'fas fa-cloud-upload-alt',
+            title: 'IT471: Cloud Computing (E)',
+            hrs: '3',
+            desc: 'Introduction to Cloud concepts and infrastructure.',
+            summary: `<h3>IT471 Course Summary</h3>
+                    <p>Introductory elective course for the Cloud Computing track.</p>
+                    <h4>Cloud Basics</h4>
+                    <ul>
+                        <li>Characteristics of Cloud.</li>
+                        <li>Deployment models.</li>
+                        <li>Basic AWS/Azure services.</li>
+                    </ul>`
+        },
+        {
+            id: 'IT473',
+            category: 'electives',
+            diff: 'hard',
+            icon: 'fas fa-network-wired',
+            title: 'IT473: Cloud Systems Arch (E)',
+            hrs: '3',
+            desc: 'Designing and architecting scalable cloud systems.',
+            summary: `<h3>IT473 Course Summary</h3>
+                    <p>Designing scalable, highly available systems on the cloud.</p>
+                    <h4>Arch Principles</h4>
+                    <ul>
+                        <li>Elasticity and Scalability.</li>
+                        <li>Serverless architectures.</li>
+                        <li>Cloud security best practices.</li>
+                    </ul>`
+        },
+        {
+            id: 'IT451',
+            category: 'electives',
+            diff: 'med',
+            icon: 'fas fa-shield-alt',
+            title: 'IT451: Network Security (E)',
+            hrs: '3',
+            desc: 'Deep dive into securing network infrastructures.',
+            summary: `<h3>IT451 Course Summary</h3>
+                    <p>Focuses on advanced network security protocols and tools.</p>
+                    <h4>Network Defense</h4>
+                    <ul>
+                        <li>IPSec and VPNs.</li>
+                        <li>Firewall configuration.</li>
+                        <li>Wireless security.</li>
+                    </ul>`
+        },
+        {
+            id: 'IT452',
+            category: 'electives',
+            diff: 'hard',
+            icon: 'fas fa-search-plus',
+            title: 'IT452: Computer Forensics (E)',
+            hrs: '3',
+            desc: 'Investigating digital evidence and cyber crimes.',
+            summary: `<h3>IT452 Course Summary</h3>
+                    <p>Legal and technical aspects of digital forensics.</p>
+                    <h4>Forensics Tasks</h4>
+                    <ul>
+                        <li>Evidence collection and preservation.</li>
+                        <li>File system analysis.</li>
+                        <li>Memory and network forensics.</li>
+                    </ul>`
+        },
+        {
+            id: 'ISLM101',
+            category: 'university-req',
+            diff: 'easy',
+            icon: 'fas fa-mosque',
+            title: 'ISLM101: Islamic Culture I',
+            hrs: '2',
+            desc: 'Introduction to Islamic faith and its characteristics.',
+            summary: 'The conceptual foundation of Islamic Culture.'
+        },
+        {
+            id: 'ISLM102',
+            category: 'university-req',
+            diff: 'easy',
+            icon: 'fas fa-book',
+            title: 'ISLM102: Islamic Culture II',
+            hrs: '2',
+            desc: 'Islam and society.',
+            summary: 'Social structures and rights in Islam.'
+        },
+        {
+            id: 'ISLM103',
+            category: 'university-req',
+            diff: 'easy',
+            icon: 'fas fa-balance-scale',
+            title: 'ISLM103: Islamic Culture III',
+            hrs: '2',
+            desc: 'Islamic economic and political systems.',
+            summary: 'Islamic perspectives on governance and economy.'
+        },
+        {
+            id: 'ISLM104',
+            category: 'university-req',
+            diff: 'easy',
+            icon: 'fas fa-heart',
+            title: 'ISLM104: Islamic Culture IV',
+            hrs: '2',
+            desc: 'Contemporary issues and human rights.',
+            summary: 'Modern challenges and Islamic responses.'
         }
     ];
 
-    const quizzes = {};
+    const quizzes = {
+        'ENG001': [
+            { q: "What is the primary goal of ENG001?", a: ["Creative writing", "Academic proficiency", "Spelling only", "Poetry"], c: 1, e: "The course aims to prepare students for academic English." },
+            { q: "Which writing part introduces the main idea?", a: ["Conclusion", "Supporting detail", "Topic sentence", "Appendix"], c: 2, e: "The topic sentence presents the central thought of a paragraph." },
+            { q: "Passive voice is preferred in which context?", a: ["Novels", "Technical reports", "Casual texts", "Advertisements"], c: 1, e: "Technical writing often uses passive voice for objectivity." },
+            { q: "Scanning is a reading strategy to find:", a: ["Main ideas", "Specific info", "Author's mood", "Synonyms"], c: 1, e: "Scanning is looking for specific data (dates, names, etc.)." },
+            { q: "What is 'Skimming'?", a: ["Reading for detail", "Reading for general gist", "Proofreading", "Memorizing"], c: 1, e: "Skimming is a fast reading technique for the overall idea." },
+            { q: "Transition words like 'However' show:", a: ["Addition", "Contrast", "Result", "Time"], c: 1, e: "However is used to contrast two ideas." },
+            { q: "Academic vocabulary is often found in the:", a: ["Comic books", "AWL (Academic Word List)", "Slang dictionaries", "Lyrics"], c: 1, e: "The AWL is the standard for academic English terms." },
+            { q: "A run-on sentence is a:", a: ["Short sentence", "Grammatical error", "Perfect paragraph", "Verb"], c: 1, e: "Run-on sentences occur when two main clauses are joined without punctuation." },
+            { q: "Effective listening involves:", a: ["Interrupting", "Paraphrasing", "Ignoring", "Multitasking"], c: 1, e: "Active listening often requires paraphrasing to confirm understanding." },
+            { q: "Technical English focuses on:", a: ["Ambiguity", "Precision", "Emotional appeal", "Slang"], c: 1, e: "Technical communication must be clear and precise." }
+        ],
+        'CS001': [
+            { q: "What is the 'Brain' of the computer?", a: ["RAM", "SSD", "CPU", "GPU"], c: 2, e: "The Central Processing Unit (CPU) handles all logic and processing." },
+            { q: "RAM is known as:", a: ["Permanent memory", "Volatile memory", "Storage", "Input device"], c: 1, e: "RAM is volatile; it loses data when power is turned off." },
+            { q: "Which protocol is secure for web browsing?", a: ["HTTP", "FTP", "HTTPS", "SMTP"], c: 2, e: "HTTPS encrypts the communication for security." },
+            { q: "1 Gigabyte (GB) equals how many Megabytes (MB)?", a: ["100", "512", "1024", "2048"], c: 2, e: "In binary terms, 1GB = 1024MB." },
+            { q: "What is the role of an Operating System?", a: ["Designing websites", "Managing hardware", "Editing photos", "Playing music"], c: 1, e: "The OS manages hardware and system resources." },
+            { q: "Which is a valid IPv4 address?", a: ["192.168.1.1", "256.0.0.1", "www.google.com", "A1:B2"], c: 0, e: "IPv4 uses four decimal numbers separated by dots (0-255)." },
+            { q: "What does GUI stand for?", a: ["Global User Index", "Graphical User Interface", "General Unit Info", "Great User Input"], c: 1, e: "GUI allows interaction via visual icons and windows." },
+            { q: "Excel formulas always start with:", a: ["#", "$", "=", "@"], c: 2, e: "The equals sign (=) starts every Excel formula." },
+            { q: "Which part of the CPU performs calculations?", a: ["CU", "Registers", "ALU", "Cache"], c: 2, e: "The Arithmetic Logic Unit (ALU) performs math and logic." },
+            { q: "SSDs are faster than HDDs because they use:", a: ["Moving disks", "Flash memory", "Magnetic tapes", "Laser"], c: 1, e: "Solid State Drives use flash memory with no moving parts." }
+        ],
+        'MATH150': [
+            { q: "What is the truth value of 'P AND Q' if P is true and Q is false?", a: ["True", "False", "Both", "Unknown"], c: 1, e: "Both must be true for AND to be true." },
+            { q: "Which symbol represents 'For all' in logic?", a: ["∃", "∀", "¬", "∧"], c: 1, e: "∀ is the universal quantifier." },
+            { q: "A Set with 3 elements has how many Power Set elements?", a: ["3", "6", "8", "9"], c: 2, e: "Power Set size is 2^n. 2^3 = 8." },
+            { q: "De Morgan's Law states ¬(P ∨ Q) is equivalent to:", a: ["¬P ∨ ¬Q", "¬P ∧ ¬Q", "P ∧ Q", "¬P ∧ Q"], c: 1, e: "¬(P ∨ Q) ≡ ¬P ∧ ¬Q." },
+            { q: "Modular arithmetic: 10 mod 3 equals:", a: ["1", "3", "0", "10"], c: 0, e: "10 divided by 3 has a remainder of 1." },
+            { q: "In graph theory, a 'Cycle' is a path that:", a: ["Never ends", "Starts and ends at the same node", "Is invisible", "Only has one node"], c: 1, e: "A cycle returns to its starting point." },
+            { q: "What is the probability of a certain event?", a: ["0", "0.5", "1", "-1"], c: 2, e: "Certainty is represented by 1 (or 100%)." },
+            { q: "A 'Bijection' is a function that is:", a: ["Only Injective", "Only Surjective", "Both Injective and Surjective", "Neither"], c: 2, e: "Bijective functions are one-to-one and onto." },
+            { q: "Proof by induction starts with a:", a: ["Assumption", "Base case", "Conclusion", "Contradiction"], c: 1, e: "The base case is the first step of mathematical induction." },
+            { q: "A graph with no cycles is called a:", a: ["Tree", "Ring", "Matrix", "Loop"], c: 0, e: "A connected graph without cycles is a tree." }
+        ],
+        'IT101': [
+            { q: "What does TPS stand for?", a: ["Technical Power System", "Transaction Processing System", "Total Point Score", "Time per Second"], c: 1, e: "TPS handles daily business transactions." },
+            { q: "Cloud Computing 'SaaS' stands for:", a: ["Storage as a Service", "System as a Service", "Software as a Service", "Security as a Service"], c: 2, e: "SaaS provides software via the web (e.g. Gmail)." },
+            { q: "What is the primary focus of Information Systems?", a: ["Only coding", "People, Processes, and Tech", "Building hardware", "Gaming"], c: 1, e: "IS integrates people and technology for business." },
+            { q: "The 'Digital Divide' refers to:", a: ["Split screens", "Inequality in tech access", "Fast internet", "New CPUs"], c: 1, e: "It is the gap between those with and without digital access." },
+            { q: "MIS stands for:", a: ["Management Information System", "Medical Info System", "Mobile Input Source", "Modern IT Suite"], c: 0, e: "MIS helps managers make decisions using data." },
+            { q: "A Firewall's main job is:", a: ["Cooling", "Security filtering", "Faster browsing", "Printing"], c: 1, e: "Firewalls filter incoming/outgoing traffic for security." },
+            { q: "Which model is the internet built on?", a: ["Standalone", "Client-Server", "Broadcast", "Manual"], c: 1, e: "The internet primarily uses the Client-Server architecture." },
+            { q: "IoT stands for:", a: ["Input of Tasks", "Internet of Things", "Intranet of Trust", "Index of Tools"], c: 1, e: "IoT refers to physical objects connected to the web." },
+            { q: "ERP systems are used to:", a: ["Only play games", "Integrate business processes", "Fix computers", "Clean data"], c: 1, e: "ERP integrates core business functions (Finance, HR, etc.)." },
+            { q: "What is 'Big Data'?", a: ["One large file", "Large, complex datasets", "A large computer", "A hard drive brand"], c: 1, e: "Big Data involves volume, velocity, and variety of info." }
+        ]
+    };
+
+    // Fill remaining quizzes with placeholders for 27+ courses to ensure no crashes
     courses.forEach(c => {
-        quizzes[c.id] = [
-            { q: `What is a primary learning outcome of ${c.id}?`, a: ["Hardware Basics", "Core Theory", "Application Skills", "Ethics"], c: 2, e: "This course focuses on practical application in IT." },
-            { q: `Which university offers this BSIT plan?`, a: ["KSU", "KAU", "SEU", "PNU"], c: 2, e: "Saudi Electronic University (SEU) provides this plan." },
-            { q: `Is this course required for the SEU IT degree?`, a: ["No", "Optional", "Yes", "Only for minors"], c: 2, e: "This is a core course in the IT curriculum." },
-            { q: `How many credit hours does ${c.id} typically award?`, a: ["1", "2", "3", "4"], c: 2, e: "Most core courses are 3 credits." },
-            { q: `What system is used at SEU for official records?`, a: ["Banner", "LMS", "Blackboard", "Email"], c: 0, e: "Banner is the student information system." },
-            { q: `The BSIT program is designed for how many years?`, a: ["2", "3", "4", "5"], c: 2, e: "It's a standard 4-year degree." },
-            { q: `What is the teaching language for IT at SEU?`, a: ["Arabic", "English", "French", "Bilingual"], c: 1, e: "Courses are delivered in English." },
-            { q: `Which level of Bloom's Taxonomy does this hub target?`, a: ["Knowledge", "Evaluation", "Creation", "All levels"], c: 3, e: "We aim for comprehensive mastery." },
-            { q: `Where can students find project guidance?`, a: ["Social Media", "Faculty Mentors", "Gaming forums", "Manuals"], c: 1, e: "Faculty supervisors provide core project guidance." },
-            { q: `Who is the creator of this portal?`, a: ["Nawaf", "N58", "The AI", "The Admin"], c: 1, e: "This portal is a creation of N58." }
-        ];
+        if(!quizzes[c.id]) {
+            quizzes[c.id] = [
+                { q: `Detailed question about ${c.id} topic?`, a: ["Incorrect", "Correct", "Partially", "None"], c: 1, e: `Researching actual ${c.id} exams is key.` },
+                { q: `What is the core of ${c.id}?`, a: ["Skill", "Knowledge", "Logic", "All"], c: 3, e: "Every part of the course is vital." },
+                { q: "Is this course part of the BSIT plan?", a: ["Yes", "No", "Optional", "Maybe"], c: 0, e: "It is a standard course for SEU IT students." },
+                { q: "The study load (hrs) is:", a: ["1", "2", "3", "4"], c: 2, e: "Standard courses are 3 credits." },
+                { q: "Level of difficulty?", a: ["Intro", "Intermediate", "Advanced", "Variable"], c: 3, e: "Difficulty varies by semester." },
+                { q: "Key requirement?", a: ["Exam", "Project", "Both", "Attendance"], c: 2, e: "Assessment usually includes both." },
+                { q: "Target Skill?", a: ["Technical", "Analytical", "Practical", "All"], c: 3, e: "Comprehensive skill development is expected." },
+                { q: "Primary source?", a: ["Book", "LMS", "Google", "Portal"], c: 1, e: "LMS is the official source." },
+                { q: "Grading system?", a: ["Letters", "Numbers", "Pass/Fail", "Points"], c: 0, e: "SEU uses the A-F letter system." },
+                { q: "Made by?", a: ["N58", "University", "Admin", "User"], c: 0, e: "N58 created this portal for you." }
+            ];
+        }
     });
 
     const grid = document.getElementById('courseGrid');
