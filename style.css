@@ -112,6 +112,20 @@ body.dark-mode { background-color: var(--bg-dark); color: var(--text-main); over
 .result-icon { font-size: 4rem; color: #a855f7; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.4)); }
 .score-display { font-size: 2.5rem; font-weight: 800; background: linear-gradient(to right, #fff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
 
+/* Formula Styling */
+.formula {
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 15px 0;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
 /* Responsive & Mobile */
 .mobile-toggle { display: none; background: var(--glass); border: none; color: #fff; width: 45px; height: 45px; border-radius: 12px; cursor: pointer; }
 .mobile-close { display: none; }
