@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const courseContent = {
         'ENG001': {
             title: 'ENG001: English Skills',
-            category: 'first-year',
+            category: 'it-core',
             diff: 'easy',
             icon: 'fas fa-language',
             hrs: '8',
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'CS001': {
             title: 'CS001: Computer Essentials',
-            category: 'first-year',
+            category: 'it-core',
             diff: 'easy',
             icon: 'fas fa-laptop',
             hrs: '3',
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'MATH001': {
             title: 'MATH001: College Algebra',
-            category: 'first-year',
+            category: 'math',
             diff: 'med',
             icon: 'fas fa-calculator',
             hrs: '3',
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'PHYS101': {
             title: 'PHYS101: General Physics',
-            category: 'core-it',
+            category: 'it-core',
             diff: 'hard',
             icon: 'fas fa-bolt',
             hrs: '3',
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'IT230': {
             title: 'IT230: Web Technologies',
-            category: 'it-core',
+            category: 'programming',
             diff: 'med',
             icon: 'fas fa-code',
             hrs: '3',
@@ -158,21 +158,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!grid) return;
         grid.innerHTML = '';
         finalCourses.forEach(c => {
-            if ((filter === 'all' || c.category === filter) && (c.id.toLowerCase().includes(query.toLowerCase()) || c.title.toLowerCase().includes(query.toLowerCase()))) {
+            const matchesFilter = filter === 'all' || c.category === filter;
+            const matchesSearch = c.id.toLowerCase().includes(query.toLowerCase()) || 
+                                 c.title.toLowerCase().includes(query.toLowerCase());
+            
+            if (matchesFilter && matchesSearch) {
                 const card = document.createElement('div');
                 card.className = 'course-card';
-                card.innerHTML = \`
+                card.innerHTML = `
                     <div class="card-header">
-                        <span class="badge \${c.diff}">\${c.diff}</span>
-                        <div class="course-icon"><i class="\${c.icon}"></i></div>
+                        <span class="badge ${c.diff}">${c.diff}</span>
+                        <div class="course-icon"><i class="${c.icon}"></i></div>
                     </div>
-                    <h3>\${c.title}</h3>
+                    <h3>${c.title}</h3>
                     <div class="course-meta">
-                        <span><i class="far fa-clock"></i> \${c.hrs} Credits</span>
+                        <span><i class="far fa-clock"></i> ${c.hrs} Credits</span>
                     </div>
-                    <p>\${c.desc}</p>
-                    <button class="primary-btn view-course" data-id="\${c.id}"><i class="fas fa-book-open"></i> Study Hub</button>
-                \`;
+                    <p>${c.desc}</p>
+                    <button class="primary-btn view-course" data-id="${c.id}"><i class="fas fa-book-open"></i> Study Hub</button>
+                `;
                 grid.appendChild(card);
             }
         });
@@ -182,6 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function openHub(id) {
         if (!modal) return;
         const course = finalCourses.find(c => c.id === id);
+        if (!course) return;
+        
         const modalTitle = document.getElementById('modalTitle');
         const summaryContent = document.getElementById('courseSummaryContent');
         if (modalTitle) modalTitle.innerText = course.title;
@@ -210,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const expBox = document.getElementById('explanationBox');
         const nextBtn = document.getElementById('nextBtn');
 
-        if (progressBar) progressBar.style.width = \`\${((qIdx + 1) / courseQuiz.length) * 100}%\`;
+        if (progressBar) progressBar.style.width = `${((qIdx + 1) / courseQuiz.length) * 100}%`;
         if (questionText) questionText.innerText = currentQ.q;
         if (optCont) optCont.innerHTML = ''; 
         if (expBox) expBox.classList.add('hidden'); 
@@ -220,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentQ.options.forEach((opt, i) => {
                 const div = document.createElement('div');
                 div.className = 'option-card';
-                div.innerHTML = \`<span>\${opt}</span><i class="far fa-circle"></i>\`;
+                div.innerHTML = `<span>${opt}</span><i class="far fa-circle"></i>`;
                 div.onclick = () => {
                     if (nextBtn && nextBtn.classList.contains('hidden')) {
                         const all = optCont.querySelectorAll('.option-card');
