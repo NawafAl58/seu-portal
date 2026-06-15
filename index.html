@@ -72,34 +72,42 @@
         </div>
 
         <footer class="elite-footer">
-            <p>Made with <i class="fas fa-heart"></i> by N58</p>
+            <p>Made by Nawaf</p>
         </footer>
     </main>
 
-    <!-- Quiz Modal -->
-    <div id="quizModal" class="modal">
+    <!-- Hub Modal (Renamed to match script.js) -->
+    <div id="courseModal" class="modal">
         <div class="modal-backdrop"></div>
         <div class="modal-container">
             <div class="modal-header">
-                <h2 id="quizTitle">Course Check</h2>
-                <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+                <h2 id="modalTitle">Course Check</h2>
+                <button class="modal-close" id="closeCourseModal"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body">
-                <div id="quizContent">
-                    <div class="progress-bar-container">
-                        <div class="progress-bar" id="quizProgress"></div>
-                    </div>
-                    <p class="question-text" id="questionText"></p>
-                    <div class="options-grid" id="optionsContainer"></div>
-                    <div id="explanationBox" class="explanation-box hidden"></div>
-                    <button id="nextBtn" class="primary-btn hidden">Next Question</button>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="summary">Summary</button>
+                    <button class="tab-btn" data-tab="quiz">Assessment</button>
                 </div>
-                <div id="quizResult" class="hidden">
-                    <div class="result-card">
-                        <div class="result-icon"><i class="fas fa-trophy"></i></div>
-                        <h3>Assessment Complete</h3>
-                        <p class="score-display" id="scoreText"></p>
-                        <button class="primary-btn" id="finishQuiz">Close Assessment</button>
+                <div id="summaryTab" class="tab-content active">
+                    <div id="courseSummaryContent" class="detailed-summary-text"></div>
+                </div>
+                <div id="quizTab" class="tab-content">
+                    <div id="quizContent">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="quizProgress"></div>
+                        </div>
+                        <p class="question-text" id="questionText"></p>
+                        <div class="options-grid" id="optionsContainer"></div>
+                        <div id="explanationBox" class="explanation-box hidden"></div>
+                        <button id="nextBtn" class="primary-btn hidden">Next Question</button>
+                    </div>
+                    <div id="quizResult" class="hidden">
+                        <div class="result-card">
+                            <div class="result-icon"><i class="fas fa-trophy"></i></div>
+                            <h3>Assessment Complete</h3>
+                            <p class="score-display" id="scoreText"></p>
+                        </div>
                     </div>
                 </div>
             </div>
